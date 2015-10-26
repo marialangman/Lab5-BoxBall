@@ -28,7 +28,7 @@ public class BallDemo
      */
     public void bounce()
     {
-       // myCanvas.erase();   //refresh the Canvas
+        // myCanvas.erase();   //refresh the Canvas
         int ground = 400;   // position of the ground line
 
         // draw the ground
@@ -83,7 +83,7 @@ public class BallDemo
         while (timer<200)
         {
             myCanvas.wait(30);           // small delay
-            
+
             //draw boundaries each simulation "tick" to 'mask' erase() method's peculiarity
             //when object is at any of the boundaries
             myCanvas.drawLine(OFFSET, OFFSET, X_MAX, OFFSET);   //top boundary
@@ -96,9 +96,14 @@ public class BallDemo
             {
                 balls[i].move();
             }
-
             timer++;
         }
 
+        for (int i=0; i<balls.length; i++)
+        {
+            balls[i].erase();
+            balls[i].dropBall();
+            balls[i].draw();
+        }
     }
 }

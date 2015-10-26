@@ -108,8 +108,14 @@ public class BoxBall
 
         // draw again at new position
         draw();
-
-    }    
+    }
+    /**
+     * Set the ball to drop and stop bouncing.
+     */
+    public void dropBall()
+    {
+        yPosition = y_Max-diameter;
+    }
 
     /**
      * return the horizontal position of this ball
